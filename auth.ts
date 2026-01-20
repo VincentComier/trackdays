@@ -1,6 +1,6 @@
 import { betterAuth } from "better-auth";
 import { drizzleAdapter } from "better-auth/adapters/drizzle";
-import { db } from "@/src/db"; // your drizzle instance
+import { db } from "@/lib/db/drizzle"; // your drizzle instance
 
 export const auth = betterAuth({
    database: drizzleAdapter(db, {
