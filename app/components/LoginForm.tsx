@@ -25,13 +25,13 @@ export default function LoginForm() {
       const result = await signIn.email({
         email,
         password,
-        callbackURL: "/lap-times",
+        callbackURL: "/",
       });
 
       if (result.error) {
         setError(result.error.message || "Erreur de connexion");
       } else {
-        router.push("/lap-times");
+        router.push("/");
       }
     } catch (err) {
       console.error("Login error:", err);

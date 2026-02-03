@@ -40,7 +40,8 @@ export default async function ProfilePage({ params }: ProfilePageProps) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* En-tête du profil */}
         <div className="bg-white rounded-lg shadow-md p-6 mb-6">
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center space-x-4">
             {userData.image && (
               <img
                 src={userData.image}
@@ -57,6 +58,15 @@ export default async function ProfilePage({ params }: ProfilePageProps) {
                 Membre depuis {new Date(userData.createdAt).toLocaleDateString('fr-FR')}
               </p>
             </div>
+            </div>
+            {userData.isAdmin && (
+              <Link
+                href="/admin"
+                className="inline-flex items-center rounded-md bg-gray-900 px-4 py-2 text-sm font-semibold text-white hover:bg-gray-800"
+              >
+                Panneau admin
+              </Link>
+            )}
           </div>
         </div>
 
